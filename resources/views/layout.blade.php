@@ -12,13 +12,11 @@
 
 	<meta name="description" content="Fortnite Clans! Find Clans, Teams, and Players for the popular game Fortnite. The best place for fortnite clans, teams, and players to connect.">
 
-	<meta name="keywords" content="Fortnite, Fortnite Clan, Fortnite Team, Fortnite Teams, Fortnite Clans, Team, Teams, Esports, Clan, Clans, Fort Nite, Fort Night, Fortnight. Fornite Clans, Fornite">
+	<meta name="keywords" content="Fortnite, Fortnite Clan, Fortnite Team, Fortnite Teams, Fortnite Clans, Team, Teams, Esports, Clan, Clans, Fort Nite, Fort Night, Fortnight, Fornite Clans, Fornite">
 
 	<meta name="robots" content="index, follow">
 
-
-
-	<meta property="og:type" content="business.business">
+	<meta property="og:type" content="website">
 
 	<meta property="og:title" content="@yield('ogtitle','Fortnite Clan')">
 
@@ -27,8 +25,6 @@
 	<meta property="og:image" content="@yield('ogimage','https://fortniteclan.com/images/fortniteclanog.png')">
 
 	<meta property="og:description" content="@yield('ogdesc','Fortnite Clans! Find Clans and Players for the popular game Fortnite. The best place for fortnite clans and fortnite players to connect.')'">
-
-
 
 	<title>@yield('title')</title>
 
@@ -48,7 +44,7 @@
 
 		{
 
-		  "@context": "http://schema.org",
+		  "@context": "https://fortniteclan.com/",
 
 		  "@type": "Organization",
 
@@ -72,14 +68,10 @@
 
 	  </script>
 
-	
-
 </head>
 
 
-
 <body>
-
 	<nav class="navbar navbar-expand-lg navbar-dark navbg p-2">
 		<div class="container px-1">
 			
@@ -249,8 +241,6 @@
 
 							</ul>
 
-
-
 						</div>
 
 						<div class="col-md-6 col-lg-3 mb-md-0 mb-3">
@@ -262,27 +252,19 @@
 							<div class="row justify-content-center">
 
 								<a href="https://discord.gg/dY2vHM6" target="_blank">
-
-										<button class="btn discord social"><i class="fab fa-discord"></i></button>
-
+									<button class="btn discord social"><i class="fab fa-discord"></i></button>
 								</a>
 
 								<a href="https://twitter.com/fortniteclancom" target="_blank">
-
-										<button class="btn twitter social"><i class="fab fa-twitter"></i></button>
-
+									<button class="btn twitter social"><i class="fab fa-twitter"></i></button>
 								</a>
 
 								<a href="https://www.instagram.com/fortniteclancom/" target="_blank">
-
-										<button class="btn instagram social"><i class="fab fa-instagram"></i></button>
-
+									<button class="btn instagram social"><i class="fab fa-instagram"></i></button>
 								</a>
 
 								<a href="https://www.youtube.com/channel/UCVc-EF-05bkHMXbuA0O1L1g" target="_blank">
-
 									<button class="btn youtube social"><i class="fab fa-youtube"></i></button>
-
 								</a>
 
 							</div>
@@ -299,24 +281,6 @@
 
 	@yield('scripts')
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123158934-1"></script>
-
-	<script>
-
-		window.dataLayer = window.dataLayer || [];
-
-    function gtag(){dataLayer.push(arguments);}
-
-    gtag('js', new Date());
-
-
-
-    gtag('config', 'UA-123158934-1');
-
-	</script>
-
 	<script src='https://www.google.com/recaptcha/api.js'></script> 
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -328,7 +292,4 @@
 	@yield('footers')
 
 </body>
-
-
-
 </html>
