@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Http\Controllers;
 
 use App\Clans;
@@ -10,22 +8,15 @@ use App\Votes;
 use App\Region;
 use App\Platform;
 use Illuminate\Http\Request;
-
 use Auth;
-
 use Validator;
-
 use Illuminate\Validation\Rule;
-
 use Carbon\Carbon;
-
-
 
 class ClansController extends Controller
 
 {
 
-    //
 
     public function bump(Request $request) {
 
@@ -34,7 +25,6 @@ class ClansController extends Controller
          $last_bumped = Carbon::parse($clan->bumped_at);
 
          $time_now = Carbon::now();
-
 
 
          if ($time_now->subHours(24) > $last_bumped) {
@@ -226,15 +216,11 @@ class ClansController extends Controller
 
           if ($request->hasFile('image')) {
 
-
-
                $this->validate($request, [
 
-                    'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:512',
+                    'image' => 'required|image|mimes:jpeg,png,jpg|max:512',
 
                ]);
-
-
 
 		 //Check to see if an image was uploaded.
 
@@ -242,7 +228,7 @@ class ClansController extends Controller
 
 			      $destination = 'images/';
 
-			      $ext= $file->getClientOriginalExtension();
+			      $ext = $file->getClientOriginalExtension();
 
 			      $mainFilename = str_slug($clan->name);
 
@@ -270,7 +256,7 @@ class ClansController extends Controller
 
                'description' => 'min:25',
 
-               'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+               'image' => 'required|image|mimes:jpeg,png,jpg|max:1024',
 
                'discord' => 'nullable|url',
 
@@ -312,7 +298,7 @@ class ClansController extends Controller
 
           if ($request->hasFile('image')) {
 
-               $this->validate($request, [ 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:512',]);
+               $this->validate($request, [ 'image' => 'required|image|mimes:jpeg,png,jpg|max:512',]);
 
                //Check to see if an image was uploaded.
 
@@ -372,27 +358,4 @@ class ClansController extends Controller
           return redirect('/');
 
      }
-
-     public function makeSlugs() {
-          $clans = Clans::all();
-
-          foreach($clans as $clan) {
-               if (is_null($clan->slug) && !is_null($clan->name)) {
-                    $slug = str_slug($clan->name);
-                    $checkSlug = Clans::whereSlug($slug)->count();
-                    if($checkSlug > 0) {
-                         $clan->slug = $slug . '-' . ($checkSlug + 1);
-                    } else {
-                         $clan->slug = $slug;
-                    }
-                    $clan->save();
-               }
-          }
-          return redirect('/');
-     }
-
-
-
-
 }
-

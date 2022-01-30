@@ -145,4 +145,3 @@ class RegisterController extends Controller
     }
 
 }
-
