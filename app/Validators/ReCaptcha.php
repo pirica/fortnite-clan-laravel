@@ -10,12 +10,13 @@ class ReCaptcha
             [
                 'form_params' =>
                     [
-                        'secret' => env('GOOGLE_RECAPTCHA_SECRET'),
+                        'secret' => config('services.google.secret'),
                         'response' => $value
                     ]
             ]
         );
         $body = json_decode((string)$response->getBody());
+
         return $body->success;
     }
 }

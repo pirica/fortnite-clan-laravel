@@ -33,7 +33,8 @@ return [
         'webhook' => env('DISCORD_WEBHOOK')
     ],
     'google' => [
-        'sitekey' => env('GOOGLE_RECAPTCHA_KEY')
+        'sitekey' => env('GOOGLE_RECAPTCHA_KEY'),
+        'secret' => env('GOOGLE_RECAPTCHA_SECRET')
     ],
 
     'stripe' => [
