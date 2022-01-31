@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Validator::extend('recaptcha', 'App\\Validators\\ReCaptcha@validate');
+        Validator::extend('mailgun', 'App\\Validators\\ValidateMailgun@validate');
 
           Schema::defaultStringLength(191);
           view()->composer('layout', function($view) {
