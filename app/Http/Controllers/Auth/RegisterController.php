@@ -100,7 +100,7 @@ class RegisterController extends Controller
 
         return Validator::make($data, [
 
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users', 'mailgun'],
 
             'password' => ['required', 'string', 'min:6', 'confirmed'],
 
@@ -108,6 +108,10 @@ class RegisterController extends Controller
 
             'g-recaptcha-response' => ['required','recaptcha']
 
+        ],
+        [
+            'g-recaptcha-response.recaptcha' => 'Recaptcha security failure.',
+            'email.mailgun' => 'Invalid email address.'
         ]);
 
     }
