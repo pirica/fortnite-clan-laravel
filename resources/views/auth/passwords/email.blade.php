@@ -8,6 +8,13 @@
                 {{ session('status') }}
             </div>
         @endif
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger mt-1">
+                    {{ $error }}
+                </div>
+            @endforeach
+        @endif
         <div id="loginbox" class="card p-3">
             <div class="card-body d-flex justify-content-center pb-0">
                 <a href="/">
@@ -39,6 +46,14 @@
                                     <strong>{{ $errors->first('email') }}</strong>
                                 </span>
                             @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <div class="row justify-content-center mb-2 g-recaptcha"
+                                data-sitekey="{{  \Config::get('services.google.sitekey') }}">
+                            </div>
                         </div>
                     </div>
 
